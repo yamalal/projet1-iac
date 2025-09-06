@@ -1,0 +1,638 @@
+    1  kubectl run -it --rm load-generator image=alpine /bin/sh
+    2  kubectl run -it --rm load-generator --image=alpine sh
+    3  kubectl get pod
+    4  clear 
+    5  kubectl run -it --rm load-generator --image=alpine sh
+    6  kubectl delete -f apache-php.yml 
+    7  minikube start
+    8  minikube dashboard
+    9  cd initiation/
+   10  touch podwithvolume.yml
+   11  minikube start 
+   12  clear
+   13  kubectl get all
+   14  kubectl delete -f deployment.yml 
+   15  kubectl delete -f apache-php.yml 
+   16  clear
+   17  kubectl get all
+   18  kubectl config current-context 
+   19  clear
+   20  kubectl apply -f podwithvolume.yml 
+   21  kubectl get pos 
+   22  kubectl get pod
+   23  kubectl get pod -w
+   24  kubectl describe pod test-volume 
+   25  clear
+   26  kubectl describe pod test-volume 
+   27  clear
+   28  kubectl get pod -w
+   29  docker ps
+   30  kubectl get pod 
+   31  kubectl describe pod test-volume 
+   32  kubectl delete -f podwithvolume.yml 
+   33  clear
+   34  kubectl apply -f podwithvolume.yml 
+   35  kubectl get pod 
+   36  kubectl delete -f podwithvolume.yml 
+   37  kubectl apply -f podwithvolume.yml 
+   38  kubectl get pod 
+   39  clear
+   40  kubectl delete -f podwithvolume.yml 
+   41  kubectl apply -f podwithvolume.yml 
+   42  clear
+   43  kubectl get pod 
+   44  clear
+   45  kubectl delete -f podwithvolume.yml 
+   46  kubectl apply -f podwithvolume.yml 
+   47  kubectl get pod 
+   48  kubectl describe pod mon-pod 
+   49  service nginx status 
+   50  kubectl logs pods/mon-pod conteneur-2
+   51  kubectl delete -f podwithvolume.yml 
+   52  kubectl get all
+   53  kubectl delete pod mon-pod 
+   54  kubectl get all
+   55  kubectl apply -f podwithvolume.yml 
+   56  kubectl get pod
+   57  kubectl exec -it -c ngnix -sh
+   58  kubectl exec -it pods/nginx-test -sh
+   59  kubectl exec -it pods/nginx-test --sh
+   60  clear 
+   61  kubectl exec (
+   62  kubectl exec -it pods/nginx-test sh
+   63  kubectl exec -it nginx-test -c nginx sh
+   64  kubectl delete -f podwithvolume.yml 
+   65  kubectl exec -it --rm test --image=alpine sh
+   66  kubectl run  -it --rm test --image=alpine sh
+   67  kubectl exec -it pods/nginx-log-fcd557fbb-q74hl sh
+   68  kubectl exec -i pods/nginx-log-796c44f494-pczks sh
+   69  kubectl exec -i pods/nginx-log-796c44f494-pczks --sg
+   70  kubectl exec -i pods/nginx-log-796c44f494-pczks --sh
+   71  kubectl exec -i pods/nginx-log-796c44f494-pczks -sh
+   72  kubectl exec -it pods/nginx-log-796c44f494-pczks sh
+   73  kubectl delete pod nginx-log-796c44f494-pczks 
+   74  clear
+   75  kubectl delete -f deployment.yml 
+   76  kubectl delete -f service.yml 
+   77  kubectl exec -it nginx-test -c alpine 
+   78  kubectl exec -it nginx-test -c alpine sh
+   79  kubectl get all
+   80  kubectl delete -f podwithvolume.yml 
+   81  kubectl get all
+   82  clear
+   83  touch pv.yml
+   84  kubectl apply -f pv.yml 
+   85  kubectl get pv
+   86  touch pvc.yml
+   87  clear
+   88  kubectl apply -f pvc.yml 
+   89  kubectl get pvc
+   90  clear
+   91  touch podwith-pvc.yml
+   92  kubectl apply -f podwith-pvc.yml 
+   93  clear
+   94  kubectl get pdo
+   95  kubectl get pod
+   96  kubectl get pod -o 
+   97  kubectl get pod -o yml
+   98  kubectl get pod -o yaml 
+   99  clear
+  100  kubectl exec -it nginx-test-pvc 
+  101  kubectl exec -it pod-with-pvc -c nginx-test-pvc sh
+  102  kubectl get all
+  103  kubectl delete pod pod-with-pvc 
+  104  kubectl get all
+  105  clear
+  106  stat pvc.yml 
+  107  ansible --version
+  108  id
+  109  clear
+  110  kubectl get all
+  111  touch statefulset.yml
+  112  kubectl apply -f statefulset.yml 
+  113  clear
+  114  kubectl apply -f statefulset.yml 
+  115  kubectl get all
+  116  kubectl describe pod web-1
+  117  clear
+  118  kubectl get pvc
+  119  kubectl delete pvc my-pvc
+  120  kubectl get pv
+  121  kubectl delete pv my-pv 
+  122  kubectl get all
+  123  kubectl 
+  124  kubectl scale --help
+  125  kubectl scale --replicas=O statefulset/web
+  126  kubectl scale --replicas=0 statefulset/web
+  127  kubectl get all
+  128  kubectl get pvc
+  129  kubectl delete pod test 
+  130  kubectl scale --replicas=4 statefulset web 
+  131  kubectl get all
+  132  kubectl rollout --help
+  133  kubectl get all
+  134  clear
+  135  kubectl delete -f service.yml 
+  136  kubectl delete -f statefulset.yml 
+  137  kubectl get pvc
+  138  kubectl delete pvc www-web-0 www-web-1 www-web-2 www-web-3 pvc
+  139  kubectl get pv
+  140  clear 
+  141  cd 
+  142  cd k8sformation/
+  143  mkdir projet3-k8s
+  144  cd projet3-k8s/
+  145  touch deployment.yml service.yml pvc.yml
+  146  kubectl apply -f deployment.yml 
+  147  clear
+  148  kubectl config current-context 
+  149  kubectl get all
+  150  kubectl get pod -w
+  151  kubectl apply -f pvc.yml 
+  152  kubectl get all
+  153  kubectl apply -f se
+  154  kubectl apply -f service.yml 
+  155  kubectl get sv
+  156  kubectl get svc
+  157  minikube service nginx 
+  158  kubectl apply -f deployment.yml 
+  159  minikube service nginx 
+  160  helm
+  161  ip 
+  162  kubectl drain --help
+  163  kubectl cordon --help
+  164  service mysql status
+  165  sudo /etc/init.d/mysql start
+  166  sudo mysql_secure_installation
+  167  UPDATE mysql.user SET plugin='mysql_native_password', password=PASSWORD('your_password') WHERE user='your_username' AND host='localhost'
+  168  UPDATE mysql.user SET plugin='mysql_native_password'
+  169  ip addr
+  170  sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+  171  mysql -u root -p
+  172  sudo mysql -u root -p
+  173  sudo netstat -tulnp | grep 3306
+  174  sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+  175  sudo netstat -tulnp | grep 3306
+  176  mysqld --verbose --help | grep "Default options"
+  177  mysqld --verbose --help | grep "Default options" | less
+  178  sudo find / -name "my.cnf" 2>/dev/null
+  179  mysqld --verbose --help
+  180  clear 
+  181  sudo mysql purge
+  182  sudo mysql --purge
+  183  sudo apt purge mysql-server*
+  184  sudo rm -r /etc/mysql /var/lib/mysql
+  185  sudo rm -r /var/log/mysql
+  186  sudo apt autoremove
+  187  sudo apt update
+  188  sudo rm -rf  /etc/apt/sources.list.d/jenkind.list:1
+  189  sudo apt update
+  190  apt ugrade 
+  191  apt upgrad
+  192  apt upgrade
+  193  sudo apt upgrade
+  194  cd 
+  195  cd /mnt/c
+  196  cd Users/malal/Downloads/
+  197  ls
+  198  sudo apk -i mysql-apt-config_0.8.33-1_all.deb
+  199  sudo apkg -i mysql-apt-config_0.8.33-1_all.deb
+  200  sudo dpkg -i mysql-apt-config_0.8.33-1_all.deb
+  201  service mysql status
+  202  sudo service mysql statuts
+  203  sudo service mysql statis
+  204  sudo service mysql status
+  205  sudo dpkg -i mysql-apt-config_0.8.33-1_all.deb
+  206  mysql
+  207  cd
+  208  cd k8sformation/
+  209  docker ps
+  210  minikube start
+  211  clear
+  212  touch secret.yml
+  213  ls
+  214  mv secret.yml initiation/
+  215  echo Je suis Dalaba | base54
+  216  echo Je suis Dalaba | base64
+  217  cd initiation/
+  218  kubectl apply -f secret.yml 
+  219  kubectl describe pod secret-test-pod 
+  220  kubectl get 
+  221  kubectl get pod
+  222  kubectl get secrets 
+  223  kubectl apply -f secret.yml 
+  224  kubectl get pod
+  225  clear
+  226  kubectl delete -f secret.yml 
+  227  kubectl apply -f secret.yml 
+  228  kubectl get pod
+  229  kubectl exec pods/secret-pod sh
+  230  kubectl exec pods/secret-pod --sh
+  231  kubectl exec -it  pods/secret-pod sh
+  232  clear
+  233  touch secret-test-volume.yml
+  234  kubectl delete -f secret.yml 
+  235  kubectl apply -f secret-test-volume.yml 
+  236  kubectl get pod 
+  237  kubectl get pod -w
+  238  kubectl logs pods/secret-test-pod 
+  239  kubectl delete -f secret-test-volume.yml 
+  240  clear
+  241  touch secret-env-test.yml
+  242  echo 123458Dalalgakdid | base64
+  243  kubectl apply -f secret-env-test.yml 
+  244  kubectl get pod 
+  245  kubectl exec -it pods/secret-env-pod sh
+  246  helm
+  247  helm repo list
+  248  helm search repo jetstack
+  249  helm
+  250  echo $PATH
+  251  curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+  252  sudo apt-get install apt-transport-https --yes
+  253  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+  254  sudo apt-get update
+  255  sudo apt-get install helm
+  256  helm
+  257  helm repo add bitnami https://charts.bitnami.com/bitnami
+  258  helm repo update
+  259  service jenkins status
+  260  find *jenkins*
+  261  sudo apt remove jenkins
+  262  sudo apt remove --purge  jenkins
+  263  service jenkins status
+  264  sudo rm -rf *jenkins
+  265  jenkins
+  266  locate jenkins
+  267  pwd jenkins
+  268  locate jenkins
+  269  cd ..
+  270  cd ProgramData/
+  271  ls
+  272  rm -rf Jenkins/
+  273  rm -rf *Jenkins/
+  274  cd 
+  275  jenkinq
+  276  jenkins
+  277  service jenkins status
+  278  clear
+  279  ls
+  280  cd jekins
+  281  cat jenkins
+  282  clear
+  283  docker network create jenkins
+  284  pwd
+  285  docker network ls
+  286  docker run --name jenkins -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts-jdk17
+  287  docker ps
+  288  docker logs
+  289  docker container logs
+  290  docker container logs jenkins 
+  291  docker ps
+  292  docker stop jenkins 
+  293  docker start jenkins 
+  294  ls
+  295  mkdir jenkinscours
+  296  cd jenkinscours/
+  297  mkdir jenkins1
+  298  cd jenkins1/
+  299  code .
+  300  docker ps
+  301  cd 
+  302  env
+  303  cd 
+  304  MY_VAR=42
+  305  nano test.sh
+  306  chmod u+x test.sh
+  307  ./test.sh 
+  308  export MY_VAR=42
+  309  ./test.sh 
+  310  echo $MY_VAR
+  311  .
+  312  ls .
+  313  ls -la
+  314  cat .bashrc
+  315  clear
+  316  cat .profile 
+  317  cat .profile | less
+  318  cat .bashrc |less
+  319  cat /etc/profile
+  320  cat /etc/profile | less
+  321  clear
+  322  cat /etc/environment
+  323  cat /etc/psswd
+  324  cd /etc/passwd
+  325  /etc/passwd
+  326  ls /etc/passwd
+  327  cat /etc/passwd
+  328  clear
+  329  id
+  330  clear
+  331  groups
+  332  groups root
+  333  ls
+  334  cd ..
+  335  cd 
+  336  ls
+  337  deluser dalaba
+  338  sudo deluser dalaba
+  339  cd ..
+  340  ls
+  341  sudo rm -rf dalaba/
+  342  ll
+  343  ls
+  344  clear
+  345  cd 
+  346  lsblk
+  347  cat /proc/partitions 
+  348  fdisk
+  349  fdisk --help
+  350  fdisk -l
+  351  ll
+  352  cd ..
+  353  ll
+  354  pwd
+  355  cd 
+  356  pwd
+  357  cd ..
+  358  ls
+  359  ll
+  360  ced 
+  361  cd
+  362  sudo usermod -aG sudo dalaba
+  363  su dalaba
+  364  du -sk * | sort -k1 -n
+  365  sudo du -sk * | sort -k1 -n
+  366  du -sk * | sort -k1 -n
+  367  man sort
+  368  du -sk * | sort -k1 -n
+  369  ls
+  370  git clone git@gitlab.com:dalaba/test.git
+  371  cd /.ssh
+  372  cd ~/.ssh
+  373  ls
+  374  cat id_ed25519.pub 
+  375  cd /mnt/c/Users/malal/gitlab/
+  376  git clone git@gitlab.com:dalaba/test.git
+  377  npm create vite@latest
+  378  npm install -g npm@11.3.0
+  379  node -v
+  380  cd frontend/
+  381  npm i
+  382  nvm install 22
+  383  nvm use 22
+  384  cd fr
+  385  cd frontend/
+  386  rm -rf node_modules package-lock.json
+  387  npm i
+  388  sudo rm -rf node_modules package-lock.json
+  389  npm i
+  390  npm run build
+  391  cd ..
+  392  cd test/
+  393  ls
+  394  git push
+  395  traceroute google.com
+  396  mkdir formation_aws
+  397  cd formation_aws/
+  398  cd ..
+  399  cd Downloads/
+  400  ls
+  401  find myawskey
+  402  mv myawskey.pem /mnt/c/Users/malal/formation_aws/
+  403  cd ..
+  404  cd formation_aws/
+  405  ls
+  406  ll
+  407  ls -la
+  408  chmod 400 myawskey.pem 
+  409  ls -la
+  410  chmod 400 myawskey.pem 
+  411  chmod 400 "myawskey.pem"
+  412  ssh -i "myawskey.pem" ec2-user@ec2-44-204-87-178.compute-1.amazonaws.com
+  413  ls
+  414  cat myawskey.pem 
+  415  ls
+  416  ll
+  417  sudo chmod 400 myawskey.pem 
+  418  ll
+  419  chmod g-xr o-x
+  420  chmod g-xr o-x myawskey.pem 
+  421  chmod g-xr  myawskey.pem 
+  422  chmod  o-x myawskey.pem 
+  423  ll
+  424  ssh ec2-user@44.204.87.178
+  425  cat ~/.ssh
+  426  cd ~/.ssh
+  427  ls
+  428  cat known_hosts
+  429  ls
+  430  cd 
+  431  ls
+  432  mkdir formation-aws
+  433  cd formation-aws/
+  434  cd  /mnt/c/Users/malal/formation_aws/
+  435  mv myawskey.pem ~/formation-aws/
+  436  ls
+  437  cd ~/formation-aws/
+  438  ls
+  439  ll
+  440  chmod 400 myawskey.pem 
+  441  ll
+  442  ssh -i "myawskey.pem" ec2-user@ec2-44-204-87-178.compute-1.amazonaws.com
+  443  pwd
+  444  ls
+  445  cd formation-aws/
+  446  ls
+  447  mkdir projets3-kms
+  448  cd projets3-kms/
+  449  cd /mnt/c/Users/malal/Downloads/
+  450  ls
+  451  mv s3-node-key.pem ~/formation-aws/projets3-kms
+  452  cd ~/formation-aws/projets3-kms
+  453  ls
+  454  chmod 400 s3-node-key.pem 
+  455  ls
+  456  ll
+  457  clear
+  458  ssh -i "s3-node-key.pem" ec2-user@ec2-13-38-218-241.eu-west-3.compute.amazonaws.com
+  459  ls
+  460  remote config
+  461  mv s3-node-key.pem C:\Users\malal\.ssh>
+  462  ls
+  463  code .
+  464  cp s3-node-key.pem C:\Users\malal\.ssh>
+  465  cp s3-node-key.pem /mnt/c/Users/malal/Downloads/
+  466  ls
+  467  ls
+  468  ssh -i "s3-node-key.pem" ec2-user@ec2-13-38-218-241.eu-west-3.compute.amazonaws.com
+  469  ssh -i "s3-node-key.pem" ec2-user@ec2-13-38-218-241.eu-west-3.compute.amazonaws.com
+  470  ls
+  471  ll
+  472  ssh -i "s3-node-key.pem" ec2-user@ec2-13-38-218-241.eu-west-3.compute.amazonaws.com
+  473  ls
+  474  ssh -i "s3-node-key.pem" ec2-user@ec2-13-38-218-241.eu-west-3.compute.amazonaws.com
+  475  journalctl -xe
+  476  tail -f /var/log/syslog	
+  477  top
+  478  htop
+  479  df -h
+  480  du -h
+  481  du -sh
+  482  cd
+  483  ls
+  484  mkdir grafana
+  485  cd grafana/
+  486  docker volume create grafana-storage
+  487  docker run -d -p 3000:3000 --name=grafana   --volume grafana-storage:/var/lib/grafana   grafana/grafana-enterprise
+  488  docker ps 
+  489  docker stop grafana 
+  490  docker ps -a
+  491  docker container ps 
+  492  docker stop jenkins 
+  493  cler 
+  494  clear 
+  495  df -h
+  496  df -hT
+  497  ss -tulnp
+  498  dr -hT
+  499  df -hT
+  500  clear
+  501  du -sh 
+  502  ls
+  503  du -sh .
+  504  free -h
+  505  clear
+  506  mpstat
+  507  man mpstat
+  508  last
+  509  ip route
+  510  ip -a
+  511  ip a
+  512  netstat -tulnp
+  513  ss -tulnp
+  514  man ip 
+  515  ls
+  516  bash -n
+  517  aws
+  518  aws help
+  519  aws s3 ms
+  520  aws s3 ls
+  521  aws s3 --help
+  522  aws ec2 ls
+  523  terraform init 
+  524  terraform plan 
+  525  terraform apply 
+  526  docker ps -a
+  527  docker images
+  528  terraform destroy 
+  529  sudo snap install terraform-docs
+  530  terraform init
+  531  terraform fmt 
+  532  terraform plan
+  533  │   terraform init -upgrade
+  534  terraform init -upgrade 
+  535  terraform plan 
+  536  terraform apply 
+  537  terraform --version
+  538  cd 
+  539  wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+  540  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+  541  sudo apt update && sudo apt install terraform
+  542  terraform --version
+  543  terraform -install-autocomplete
+  544  sudo install -m 0755 -d /etc/apt/keyrings
+  545  curl -fsSL https://packages.opentofu.org/opentofu/tofu/gpgkey | sudo gpg --dearmor -o /etc/apt/keyrings/opentofu.gpg
+  546  echo "deb [signed-by=/etc/apt/keyrings/opentofu.gpg] https://packages.opentofu.org/opentofu/tofu/any/ any main" | sudo tee /etc/apt/sources.list.d/opentofu.list > /dev/null
+  547  sudo apt update && sudo apt install tofu
+  548  tofu -install-autocomplete
+  549  tofu --version
+  550  clear
+  551  ls
+  552  cd formationterraform/
+  553  ls
+  554  cd linuxformation/
+  555  ls
+  556  cd ..
+  557  rm -rf linuxformation/
+  558  ls
+  559  cd .
+  560  code .
+  561  aws --version
+  562  sudo snap install aws-cli --classic
+  563  snap help refresh
+  564  aws --version
+  565  nano ~/.bashrc
+  566  source ~/.bashrc
+  567  aws --version
+  568  clear
+  569  aws configure sso
+  570  aws login --profile projet1-sso
+  571  aws sso login --profile projet1-sso
+  572  clear
+  573  terraform init
+  574  terraform init
+  575  terraform plan
+  576  clear
+  577  terraform fmt
+  578  terraform fmt outputs.tf
+  579  ls
+  580  cd modules/
+  581  terraform fmt
+  582  terraform plan 
+  583  cd ..
+  584  terraform plan 
+  585  terraform init
+  586  terraform plan
+  587  terraform apply 
+  588  terraform-docs .
+  589  cd modules/
+  590  terraform-docs .
+  591  export PATH="$PATH:/snap/bin"
+  592  terraform-docs .
+  593  cd
+  594  cd /formationterraform/serveur-nginx/modules$
+  595  ls
+  596  cd formationterraform/
+  597  cd serveur-nginx/
+  598  terraform-docs .
+  599  cd modules/
+  600  terraform-docs .
+  601  cd Docker-nginx/
+  602  terraform-docs .
+  603  aws 
+  604  aws --version 
+  605  snap version
+  606  sudo snap install aws-cli --classic
+  607  aws --version
+  608  apt update
+  609  sudo apt update
+  610  aws --version
+  611  sudo apt remove aws-cli
+  612  sudo apt remove awscli
+  613  aws --version
+  614  cd ..
+  615  mkdir projet1
+  616  cd projet1/
+  617  code .
+  618  ls
+  619  terraform apply 
+  620  terraform destroy 
+  621  terraform plan
+  622  terraform apply -var="dev"
+  623  terraform paln 
+  624  terraform init
+  625  clear
+  626  terraform init
+  627  terraform apply -var="dev"
+  628  terraform apply -var="environnement=dev"
+  629  clear
+  630  terraform destroy 
+  631  terraform apply 
+  632  clear
+  633  ls
+  634  mkdir serveur-nginx
+  635  cd serveur-nginx/
+  636  mkdir module
+  637  code .
+  638  history > history.txt
