@@ -74,6 +74,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: validate-code # s’exécute seulement si le job validate-code a réussi
     if: github.event_name == 'pull_request'
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
 
     steps:
       - name: Checkout code
