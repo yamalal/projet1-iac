@@ -2,7 +2,7 @@
 variable "aws_region" {
   description = "La région AWS où les ressources seront déployées."
   type        = string
-  default     = "eu-west-3"
+  default     = "us-east-1"
 }
 
 # variable "instance_type" {

@@ -19,10 +19,11 @@ data "aws_ami" "amazon_linux_2023" {
 }
 
 terraform {
+  required_version = ">= 1.5.0, < 2.0.0"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0"
+      version = ">= 5.20.0, < 7.0"
     }
   }
 }
@@ -34,7 +35,7 @@ provider "aws" {
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "~> 5.5.0"
+  version = ">= 5.20.0, < 7.0"
 
   name = "${var.project_name}-VPC-${terraform.workspace}" // Nom du VPC par environnement
   cidr = var.vpc_cidr_block
