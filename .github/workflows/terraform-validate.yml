@@ -92,6 +92,8 @@ jobs:
           role-to-assume: arn:aws:iam::396608798930:role/GitHubActions-terraform-role-projet1 # !! remplacez par l’ARN de votre rôle !!
           aws-region: us-east-1 # votre région AWS
           role-session-name: github-terraform-plan-${{ github.run_id }}
+          mask-aws-account-id: false
+          role-duration-seconds: 900
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
