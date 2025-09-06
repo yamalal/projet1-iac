@@ -74,8 +74,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: validate-code # s’exécute seulement si le job validate-code a réussi
     # ✅ n'exécute que si PR vient du même repo (pas un fork)
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == false
-    # if: github.event_name == 'pull_request'
+    # if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == false
+    if: github.event_name == 'pull_request'
     permissions:
       id-token: write
       contents: read
@@ -90,7 +90,33 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::396608798930:role/GitHubActions-terraform-role-projet1 # !! remplacez par l’ARN de votre rôle !!
           aws-region: us-east-1 # votre région AWS
-
+      
+      - name: DEBUG AWS Credentials
+        run: |
+            echo "=== DEBUG START ==="
+            echo "Testing AWS credentials in terraform_plan job..."
+            echo "Current time: $(date)"
+            echo "GitHub event: ${{ github.event_name }}"
+            echo "GitHub ref: ${{ github.ref }}"
+            echo "---"
+            
+            echo "Environment variables:"
+            env | grep -E "(AWS|GITHUB)" || echo "No AWS/GITHUB env vars found"
+            
+            echo "---"
+            echo "Testing AWS STS call..."
+            aws sts get-caller-identity || {
+            echo "❌ FAILED: Cannot get caller identity"
+            echo "Error details:"
+            aws sts get-caller-identity 2>&1 || true
+            }
+            
+            echo "---"
+            echo "AWS config files:"
+            ls -la ~/.aws/ 2>/dev/null || echo "No ~/.aws directory"
+            
+            echo "=== DEBUG END ==="    
+          
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
