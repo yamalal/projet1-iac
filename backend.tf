@@ -5,8 +5,8 @@ terraform {
 
     key    = "projet1-iac/main/terraform.tfstate" # Chemin du fichier d'état dans le bucket pour ce projet
     region = "us-east-1"                          # Région de votre backend
-
-    use_lockfile = true # Utilisation du verrouillage de l'état pour éviter les conflits
+    # use_lockfile = true # Utilisation du verrouillage de l'état pour éviter les conflits
     encrypt      = true # Assure que l'état est chiffré au repos
+    # dynamodb_table = "terraform-lock"
   }
 }
