@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "tfstate" {
   # REMPLACEZ par un nom de bucket globalement unique
   bucket = "mon-tfstate-bucket-projet1-test-unique-12345"
-  
+
   force_destroy = true
 
   tags = {
@@ -24,7 +24,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "tfstate_encryptio
   bucket = aws_s3_bucket.tfstate.id
 
   rule {
-    apply_server_side_encryption_by_default { 
+    apply_server_side_encryption_by_default {
       sse_algorithm = "AES256"
     }
   }
