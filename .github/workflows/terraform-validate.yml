@@ -17,6 +17,21 @@ permissions:
   pull-requests: write # nécessaire pour commenter les PR et pour certaines actions de plan
 
 jobs:
+  debug-oidc:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write   # 👉 indispensable pour générer le token OIDC
+      contents: read
+
+    steps:
+      - name: Récupérer le token OIDC et afficher la payload
+        run: |
+          echo "Requesting OIDC token..."
+          TOKEN=$(curl -sSL -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" | jq -r '.value')
+          echo "OIDC token reçu ✅"
+          echo "Payload décodé :"
+          echo "$TOKEN" | cut -d. -f2 | base64 -d | jq .   
   validate-code:
     name: Validate Terraform Code
     runs-on: ubuntu-latest
