@@ -8,5 +8,6 @@ terraform {
 
     use_lockfile = true # Utilisation du verrouillage de l'état pour éviter les conflits
     encrypt      = true # Assure que l'état est chiffré au repos
+    dynamodb_table = "terraform-lock"
   }
 }
