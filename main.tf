@@ -30,7 +30,7 @@ terraform {
 
 provider "aws" {
   region  = var.aws_region // Utilisation de la variable
-  profile = "projet1-sso"
+  # profile = "projet1-sso"
 }
 
 module "vpc" {
